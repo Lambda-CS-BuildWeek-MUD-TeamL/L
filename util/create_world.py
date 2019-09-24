@@ -21,15 +21,23 @@ r_treasure = Room(title="Treasure Chamber", description="""You've found the long
 chamber! Sadly, it has already been completely emptied by
 earlier adventurers. The only exit is to the south.""")
 
+r_basement = Room(title="basement", description="""You've found the long-lost treasure
+chamber! Sadly, it has already been completely emptied by
+earlier adventurers. The only exit is to the south.""")
+
 r_outside.save()
 r_foyer.save()
 r_overlook.save()
 r_narrow.save()
 r_treasure.save()
+r_basement.save()
 
 # Link rooms together
 r_outside.connectRooms(r_foyer, "n")
 r_foyer.connectRooms(r_outside, "s")
+
+r_outside.connectRooms(r_basement, "e")
+r_basement.connectRooms(r_outside, "w")
 
 r_foyer.connectRooms(r_overlook, "n")
 r_overlook.connectRooms(r_foyer, "s")
