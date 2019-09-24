@@ -25,6 +25,10 @@ r_basement = Room(title="basement", description="""You've found the long-lost tr
 chamber! Sadly, it has already been completely emptied by
 earlier adventurers. The only exit is to the south.""")
 
+r_bedroom = Room(title="bedroom", description="""You've found the long-lost treasure
+chamber! Sadly, it has already been completely emptied by
+earlier adventurers. The only exit is to the south.""")
+
 r_outside.save()
 r_foyer.save()
 r_overlook.save()
@@ -47,6 +51,9 @@ r_narrow.connectRooms(r_foyer, "w")
 
 r_narrow.connectRooms(r_treasure, "n")
 r_treasure.connectRooms(r_narrow, "s")
+
+r_bedroom.connectRooms(r_treasure, "n")
+r_treasure.connectRooms(r_basement, "s")
 
 players=Player.objects.all()
 for p in players:
