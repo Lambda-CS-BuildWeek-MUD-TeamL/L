@@ -35,6 +35,7 @@ r_overlook.save()
 r_narrow.save()
 r_treasure.save()
 r_basement.save()
+r_bedroom.save()
 
 # Link rooms together
 r_outside.connectRooms(r_foyer, "n")
