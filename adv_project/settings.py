@@ -31,6 +31,9 @@ DATABASE_URL = config('DATABASE_URL')
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS') #['*']
 
 
+
+
+
 # Application definition
 
 INSTALLED_APPS = [
