@@ -27,7 +27,7 @@ def rooms(request):
     rooms = Room.objects.all()
     result = []
     for room in rooms.values():
-        result.set(room)
+        result.append(room)
     return JsonResponse({'rooms': result})
 
 # @csrf_exempt
